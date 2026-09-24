@@ -42,6 +42,8 @@ python3 scripts/build_report.py classified.json -o 收藏夹整理分析.xlsx
 - **定时推送清单**：`advice` 为 `优先查看` / `15分钟可试` 的条目，优先查看排前。
 - **重复与待确认**。
 
+帖子链接列（按分类浏览 H 列 / 定时推送清单 E 列 / 重复与待确认 F 列）已内置**可点击超链接**（Hyperlink 样式），打开报表即可点跳原笔记。
+
 用 `present_files` 把 xlsx 交给用户。
 
 ### 6. 建每日推送任务

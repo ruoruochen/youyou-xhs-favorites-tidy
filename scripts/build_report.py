@@ -181,6 +181,9 @@ def main():
             for j, v in enumerate(vals, 1):
                 c = ws2.cell(row=r, column=j, value=v); c.border = BORDER
                 c.alignment = LEFT if j in (1, 8) else CENTER
+                if j == 8 and v:      # 帖子链接列：可点击超链接
+                    c.hyperlink = v
+                    c.style = 'Hyperlink'
             r += 1
     for col, w in zip(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'],
                       [34, 12, 16, 16, 14, 10, 10, 42, 10]):
@@ -203,6 +206,9 @@ def main():
         for j, v in enumerate(vals, 1):
             c = ws3.cell(row=r, column=j, value=v); c.border = BORDER; c.fill = f
             c.alignment = LEFT if j in (2, 5) else CENTER
+            if j == 5 and v:      # 帖子链接列：可点击超链接
+                c.hyperlink = v
+                c.style = 'Hyperlink'
         r += 1
     for col, w in zip('ABCDE', [14, 34, 14, 16, 42]):
         ws3.column_dimensions[col].width = w
@@ -223,6 +229,9 @@ def main():
             for j, x in enumerate(vals, 1):
                 c = ws4.cell(row=r, column=j, value=x); c.border = BORDER
                 c.alignment = LEFT if j in (1, 6) else CENTER
+                if j == 6 and x:      # 帖子链接列：可点击超链接
+                    c.hyperlink = x
+                    c.style = 'Hyperlink'
             r += 1
     else:
         ws4.merge_cells(start_row=r, start_column=1, end_row=r, end_column=6)
@@ -244,6 +253,9 @@ def main():
         for j, x in enumerate(vals, 1):
             c = ws4.cell(row=r, column=j, value=x); c.border = BORDER
             c.alignment = LEFT if j in (1, 6) else CENTER
+            if j == 6 and x:      # 帖子链接列：可点击超链接
+                c.hyperlink = x
+                c.style = 'Hyperlink'
         r += 1
     for col, w in zip('ABCDEF', [34, 16, 18, 14, 10, 42]):
         ws4.column_dimensions[col].width = w
